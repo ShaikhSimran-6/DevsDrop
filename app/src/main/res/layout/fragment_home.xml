@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:background="@drawable/background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/upper_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/userProfile_iv"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/user_profile"
+                    />
+
+                <TextView
+                    android:id="@+id/welcome_txt_home_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userProfile_iv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Welcome,"
+                    android:textColor="#646464"
+                    android:textSize="@dimen/_32sdp" />
+
+                <TextView
+                    android:id="@+id/username_txt_home_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/welcome_txt_home_page"
+                    android:layout_centerHorizontal="true"
+                    android:text="Simran Shaikh"
+                    android:textColor="@color/midnight_blue"
+                    android:textSize="@dimen/_32sdp"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/middle_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_below="@id/upper_rl"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/whatsOnMindTodayText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:text="What's on your mind today?"
+                    android:textColor="@color/midnight_blue"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/postQuery_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@id/whatsOnMindTodayText"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_170sdp"
+                    android:backgroundTint="@color/midnight_blue"
+                    android:text="Post A Query"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/browseIdeas_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@id/whatsOnMindTodayText"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:backgroundTint="@color/midnight_blue"
+                    android:text="Browse Ideas"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/provideSols_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@id/whatsOnMindTodayText"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:layout_marginEnd="@dimen/_170sdp"
+                    android:backgroundTint="@color/midnight_blue"
+                    android:text="Provide Solution"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/discuss_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@id/whatsOnMindTodayText"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:backgroundTint="@color/midnight_blue"
+                    android:text="Discuss"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/home_1"
+                android:layout_below="@id/middle_rl" />
+
+
+        </RelativeLayout>
+
+</FrameLayout>
