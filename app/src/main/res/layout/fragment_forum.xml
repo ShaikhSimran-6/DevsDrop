@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Forum">
 
       <TextView
@@ -14,94 +15,27 @@
           android:textSize="@dimen/_32sdp"
           android:textStyle="bold"
           android:layout_marginTop="@dimen/_10sdp"/>
-      
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:id="@+id/linearLayout"
-          android:backgroundTint="@color/background_blue"
-          android:layout_below="@id/title_txt_forum"
-          android:layout_marginTop="@dimen/_60sdp">
 
-          <TabHost
-              android:id="@+id/tabHost"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayout_forum">
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:background="@color/background_blue"
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
 
-                  <!-- Tab widget to select the tab -->
-                  <TabWidget
-                      android:id="@android:id/tabs"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"/>
-                  <!-- FrameLayout which contains the data of the activity -->
-                  <FrameLayout
-                      android:id="@android:id/tabcontent"
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent">
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout"/>
 
-                      <!-- for tab 1 -->
-                      <LinearLayout
-                          android:id="@+id/Tab1"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:orientation="vertical">
+    </RelativeLayout>
 
-                          <!-- Text View for applying the text to the tab -->
-                          <TextView
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:layout_gravity="center"
-                              android:layout_marginTop="270dp"
-                              android:text="This is Tab 1"
-                              android:textColor="#000"
-                              android:textSize="32sp" />
-                      </LinearLayout>
-
-                      <!-- for tab 2 -->
-                      <LinearLayout
-                          android:id="@+id/tab2"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:background="#90ee90"
-                          android:orientation="vertical">
-
-                          <!-- Text View for applying the text to the tab -->
-                          <TextView
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:layout_gravity="center"
-                              android:layout_marginTop="270dp"
-                              android:text="This is Tab 2"
-                              android:textColor="#000"
-                              android:textSize="32sp" />
-                      </LinearLayout>
-
-                      <!-- for tab 3 -->
-                      <LinearLayout
-                          android:id="@+id/tab3"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:background="#add8e6"
-                          android:orientation="vertical">
-
-                          <!-- Text View for applying the text to the tab -->
-                          <TextView
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:layout_gravity="center"
-                              android:layout_marginTop="270dp"
-                              android:text="This is Tab 3"
-                              android:textColor="#000"
-                              android:textSize="32sp" />
-                      </LinearLayout>
-                  </FrameLayout>
-              </LinearLayout>
-          </TabHost>
-
-      </LinearLayout>
 </FrameLayout>

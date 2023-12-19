@@ -28,22 +28,19 @@ public class MainActivity extends AppCompatActivity {
         smoothBottomBar = findViewById(R.id.bottomNav);
         loadFragment(new Home());
 
-        smoothBottomBar.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public boolean onItemSelect(int i) {
+        smoothBottomBar.setOnItemSelectedListener((OnItemSelectedListener) i -> {
 
-                if (i == 0){
-                    loadFragment(new Home());
-                } else if (i == 1) {
-                    loadFragment(new Forum());
-                } else if (i == 2) {
-                    loadFragment(new AddPost());
-                } else {
-                    loadFragment(new Profile());
-                }
-
-                return true;
+            if (i == 0){
+                loadFragment(new Home());
+            } else if (i == 1) {
+                loadFragment(new Forum());
+            } else if (i == 2) {
+                loadFragment(new AddPost());
+            } else {
+                loadFragment(new Profile());
             }
+
+            return true;
         });
 
     }
@@ -55,30 +52,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment).commit();
 
     }
-    private void tabLayout(TabHost tabHost){
-
-        tabHost = findViewById(R.id.tabHost);
-
-        tabHost.setup();
-        TabHost.TabSpec tabSpec = tabHost.newTabSpec("Tab One");
-        tabSpec.setContent(R.id.Tab1);
-        tabSpec.setIndicator("Tab One");
-        tabHost.addTab(tabSpec);
-
-        // Code for adding Tab 2 to the tabhost
-        tabSpec = tabHost.newTabSpec("Tab Two");
-        tabSpec.setContent(R.id.tab2);
-
-        // setting the name of the tab 1 as "Tab Two"
-        tabSpec.setIndicator("Tab Two");
-        tabHost.addTab(tabSpec);
-
-        // Code for adding Tab 3 to the tabhost
-        tabSpec = tabHost.newTabSpec("Tab Three");
-        tabSpec.setContent(R.id.tab3);
-        tabSpec.setIndicator("Tab Three");
-        tabHost.addTab(tabSpec);
-    }
-
 
 }
