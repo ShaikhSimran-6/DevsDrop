@@ -12,14 +12,27 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/midnight_blue"
+        android:fitsSystemWindows="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Devs Drop"
         app:titleTextColor="@color/white" />
+
+
+    <ImageButton
+        android:id="@+id/newsAppIcon"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:scaleType="centerCrop"
+        android:background="@color/midnight_blue"
+        android:src="@drawable/news"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -32,20 +45,6 @@
 
     </FrameLayout>
 
-    <ImageButton
-        android:id="@+id/newsAppIcon"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        android:src="@drawable/news_3"
-        android:scaleType="centerCrop"
-        android:background="@color/midnight_blue"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolBar"
-        app:layout_constraintEnd_toEndOf="@+id/toolBar"
-        app:layout_constraintTop_toTopOf="@+id/toolBar" />
-
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomNav"
         android:layout_width="wrap_content"
@@ -57,6 +56,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
